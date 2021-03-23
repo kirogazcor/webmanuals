@@ -1,0 +1,270 @@
+@charset "utf-8";
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+html{
+	height: 100%;	
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	color: #333;
+	font-family: "MS Reference Sans Serif";	
+}
+/*Стиль текста ссылок*/
+a{
+	color: #0355a6;	
+	text-decoration: none;
+}
+a:hover{
+	color: #ff00ff;
+}
+/*Стиль текста поиска*/
+bo{
+	font-style: italic;
+}
+/*Стиль найденного текста*/
+de{
+	background-color: yellow;
+}
+
+
+/*Стили заголовка*/
+header {
+	width: 98%;
+	min-width: 600px;
+	float: left;
+	padding: 1%;
+	background-color: #dddd00;
+	border-bottom:2px solid silver;
+	vertical-align: bottom;
+}
+
+header #logo, #manuals, #search{
+	vertical-align: bottom;
+	display: inline-block;
+}
+header #logo{
+	width: 100px;
+}
+
+header #manuals{
+	width: 48%;
+	min-width: 200px;
+	font-size: 1em;	
+}
+
+header #search{
+	width: 28%;
+	min-width: 100px;
+	padding: 1%;
+}
+
+header #search #search_box{
+	max-width: 60%;
+}
+
+header #search #search_button{
+	background-image: url(../img/search.png);  
+	background-size:contain; 
+    background-repeat: no-repeat;
+    background-position: 4px;
+    outline: none;    
+    border-radius: 5px; 
+    padding-left: 24px;
+    vertical-align: bottom;
+    height: 24px;
+}
+
+/*Стили раскрывающегося списка*/
+ul {
+    /* Делаю элементы блочными. */
+    display: block;
+    /* Убираю отступы. */
+    margin:0px;
+    /* Убираю еще отступы! */
+    padding:0px;
+}
+
+ul.menu{
+	display:none;
+	position: absolute;
+	top: 30;
+	left: 100px;
+	margin-left: 1%;
+	background-color: #dddd00;
+	min-width: 200px;
+	padding-left: 5px;
+	padding-right: 5px;
+	z-index: 1;
+}
+
+li{
+	/* Убираю маркеры у списка*/
+    list-style: none;
+    padding:10px;    
+}
+
+#manuals:hover > ul.menu{
+	display: block;
+}
+
+/*Стили основной панели на странице*/
+main {
+	width: 98%;
+	min-width: 550px;
+	float: left;
+	padding: 1%;
+	background-image: url(../img/main_background.jpg);	
+}
+/*Стиль отображения кода в тексте статьи*/
+code {
+	color: #804000;
+	white-space: pre-wrap;	
+}
+
+main #mainpanel {
+	width: 66%;
+	min-width: 200px;
+	padding: 1%;
+	float: left;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 10px;
+	margin-right: 10px;
+}
+
+/*Панель оглавления*/
+main .leftpanel {
+	max-width: 25%;
+	min-width: 100px;
+	padding: 1%;
+	float: left;
+	background-color: rgba(255,128,0,0.8);
+	border-radius: 10px;
+	margin-right: 10px;
+	z-index: 0;
+}
+
+#scroll_contents {
+	position: fixed;
+	opacity:0;
+	transition: 0.5s;
+}
+
+.titles {
+	margin: 5px;
+}
+/*Панель для чтения статей*/
+main #centerpanel {
+	width: 40%;
+	min-width: 100px;
+	padding: 1%;
+	float: left;
+	background-color: rgba(255,255,255,0.9);
+	border-radius: 10px;
+	margin-right: 10px;
+}
+p{
+	text-indent: 5%;
+}
+
+/*Стили панели с банерами*/
+main #rightpanel {
+	width: 20%;
+	float: left;
+}
+.banner {
+	max-width: 180px;
+	padding: 5px;
+	border: 1px solid silver;
+	border-radius: 5px;	
+	background: white;
+}
+
+/*Стили подвала*/
+footer {
+	width: 98%;
+	float: left;
+	padding: 1%;
+	background-color: #d7d7d7;
+	border-top: 2px solid silver;
+	margin-top: 10px;
+}
+footer #feedback, #rights{
+	vertical-align: top;
+	display: inline-block;
+}
+footer #feedback{
+	width: 66%;
+	padding: 1%;
+	min-width: 300px;
+	font-size: 1em;	
+}
+footer #rights{
+	width: 26%;
+	min-width: 100px;
+	padding: 1%;
+	font-size: 0.7em;
+}
+
+/*Стили всплывающего окна обратной связи*/
+.modalwin {           
+	min-height: 300px;  
+    width: 300px;
+    top: 20%; /* отступ сверху */
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index:2; /* поверх всех */
+    display: none;  /* сначала невидим */
+    position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+    padding: 2%;
+    background: #fefeda;
+    border: 1px solid #383838;
+    align-content: stretch;
+    text-align: center;
+    border: 5px outset #808040;     
+    border-radius: 20px;               
+}
+
+.inputtext{
+	width: 90%;
+	font-size: 1em;
+	margin: 2%;
+	border-radius: 10px;
+	padding: 5px;
+	font-family: sans-serif;
+}
+
+#sendbutton{
+	background-color: #747401;
+	color: white;
+}
+
+#message {
+	height: 100px;		
+}
+
+#messageShow{
+	float: top;
+	color:red;
+	margin: 1%;
+	display:none;
+	font-size: 0.8em;
+}
+
+/*Стиль затеняющего фона*/
+#shadow { 
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:1; /* поверх всех  кроме окна*/
+    background:#000;
+    opacity: 0.5; /*прозрачность*/
+    left:0;
+    top:0;
+}
